@@ -11,6 +11,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
 #ifndef wdtFUNCTIONS
   #define wdtFUNCTIONS
 
+#define WDTCLEAR wdtClear();
+#endif
+
 extern volatile uint8_t clearWDT;
   
 void wdtInit(void);		// initializes Watchdog Timer peripheral
