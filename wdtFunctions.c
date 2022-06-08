@@ -19,6 +19,7 @@ volatile uint8_t clearWDT = 0;                 // flag set by the WDT early warn
 void wdtInit(void) {
 
   MCLK->APBAMASK.reg |= MCLK_APBAMASK_WDT;                  // Activate the CLK_WDT_APB clock
+  //WDT->CONFIG.bit.PER = WDT_CONFIG_PER_CYC16384;            // set WDT timeout to 16 seconds  
   WDT->CONFIG.bit.PER = WDT_CONFIG_PER_CYC8192;             // set WDT timeout to 8 seconds 
   WDT->EWCTRL.bit.EWOFFSET = WDT_EWCTRL_EWOFFSET_CYC4096;   // set WDT early warning interrupt to 4 seconds
   //WDT->CONFIG.bit.PER = WDT_CONFIG_PER_CYC4096;             // set WDT timeout to 4 seconds 
